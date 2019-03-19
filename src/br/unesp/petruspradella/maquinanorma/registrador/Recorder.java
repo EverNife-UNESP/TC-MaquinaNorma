@@ -12,32 +12,28 @@ public class Recorder implements Comparable<Recorder>{
         this.signal = signal;
     }
 
-    public void fixSignal(){
-        if (value == 0 ) {
-            signal = 0;
-        }else if (value < 0){
-            invertSignal();
-            value = Math.abs(value);
-        }
-    }
-
-
     public void addOne(){
-        if (this.signal == 1){
-            this.value--;
-        }else {
+        if (this.signal == 0){
             this.value++;
+        }else {
+            this.value--;
+            if (this.value == 0){
+                this.signal--;
+            }
         }
-        fixSignal();
     }
 
     public void removeOne(){
-        if (this.signal == 1){
-            this.value++;
+        if (this.signal == 0){
+            if (this.value == 0){
+                this.signal++;
+                this.value++;
+            }else {
+                this.value--;
+            }
         }else {
-            this.value--;
+            this.value++;
         }
-        fixSignal();
     }
 
     public void invertSignal(){
