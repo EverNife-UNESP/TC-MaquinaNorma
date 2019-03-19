@@ -1,6 +1,6 @@
-package br.unesp.petruspradella.smartlogger;
+package br.unesp.petruspradella.maquinanorma.smartlogger;
 
-import br.unesp.petruspradella.registrador.Recorder;
+import br.unesp.petruspradella.maquinanorma.registrador.Recorder;
 
 public class SmartLogger {
 
@@ -19,7 +19,6 @@ public class SmartLogger {
         String message = stringBuilder.substring(0,stringBuilder.length() - 4);
 
         logOut(message);
-
     }
 
 

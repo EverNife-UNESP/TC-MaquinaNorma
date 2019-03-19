@@ -1,7 +1,7 @@
-package br.unesp.petruspradella;
+package br.unesp.petruspradella.maquinanorma;
 
-import br.unesp.petruspradella.operator.NormaOperator;
-import br.unesp.petruspradella.registrador.Recorder;
+import br.unesp.petruspradella.maquinanorma.operator.NormaOperator;
+import br.unesp.petruspradella.maquinanorma.registrador.Recorder;
 
 public class TrueMain {
 

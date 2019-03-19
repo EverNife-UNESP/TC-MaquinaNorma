@@ -1,4 +1,4 @@
-package br.unesp.petruspradella.registrador;
+package br.unesp.petruspradella.maquinanorma.registrador;
 
 public class Recorder implements Comparable<Recorder>{
 

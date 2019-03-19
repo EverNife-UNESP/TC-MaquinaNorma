@@ -1,7 +1,7 @@
-package br.unesp.petruspradella.operator;
+package br.unesp.petruspradella.maquinanorma.operator;
 
-import br.unesp.petruspradella.registrador.Recorder;
-import br.unesp.petruspradella.smartlogger.SmartLogger;
+import br.unesp.petruspradella.maquinanorma.registrador.Recorder;
+import br.unesp.petruspradella.maquinanorma.smartlogger.SmartLogger;
 
 public class NormaOperator {
 
@@ -58,8 +58,10 @@ public class NormaOperator {
                 SmartLogger.verboseLogStates(recorderA,recorderB,recorderT);
             }
         }
+    }
 
-
+    public static void multiplierRecorder(Recorder recorderA, Recorder recorderB){
+        //TODO
     }
 
 
