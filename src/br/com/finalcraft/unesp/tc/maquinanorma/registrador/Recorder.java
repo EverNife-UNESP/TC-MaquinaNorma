@@ -1,4 +1,4 @@
-package br.unesp.petruspradella.maquinanorma.registrador;
+package br.com.finalcraft.unesp.tc.maquinanorma.registrador;
 
 public class Recorder implements Comparable<Recorder>{
 

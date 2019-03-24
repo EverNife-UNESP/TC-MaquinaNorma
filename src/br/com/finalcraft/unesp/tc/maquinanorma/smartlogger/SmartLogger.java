@@ -1,6 +1,6 @@
-package br.unesp.petruspradella.maquinanorma.smartlogger;
+package br.com.finalcraft.unesp.tc.maquinanorma.smartlogger;
 
-import br.unesp.petruspradella.maquinanorma.registrador.Recorder;
+import br.com.finalcraft.unesp.tc.maquinanorma.registrador.Recorder;
 
 public class SmartLogger {
 

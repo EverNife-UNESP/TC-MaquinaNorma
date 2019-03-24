@@ -1,7 +1,7 @@
-package br.unesp.petruspradella.maquinanorma.operator;
+package br.com.finalcraft.unesp.tc.maquinanorma.operator;
 
-import br.unesp.petruspradella.maquinanorma.registrador.Recorder;
-import br.unesp.petruspradella.maquinanorma.smartlogger.SmartLogger;
+import br.com.finalcraft.unesp.tc.maquinanorma.registrador.Recorder;
+import br.com.finalcraft.unesp.tc.maquinanorma.smartlogger.SmartLogger;
 
 public class NormaOperator {
 
