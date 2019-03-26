@@ -1,7 +1,5 @@
-package br.com.finalcraft.unesp.tc.maquinanorma.application.operator;
+package br.com.finalcraft.unesp.tc.maquinanorma.application;
 
-import br.com.finalcraft.unesp.tc.maquinanorma.application.Recorder;
-import br.com.finalcraft.unesp.tc.maquinanorma.application.SmartLogger;
 import br.com.finalcraft.unesp.tc.maquinanorma.application.registrador.Recorder;
 import br.com.finalcraft.unesp.tc.maquinanorma.application.smartlogger.SmartLogger;
 
