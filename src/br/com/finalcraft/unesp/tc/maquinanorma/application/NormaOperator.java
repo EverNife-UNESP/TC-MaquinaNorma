@@ -1,7 +1,9 @@
-package br.com.finalcraft.unesp.tc.maquinanorma.operator;
+package br.com.finalcraft.unesp.tc.maquinanorma.application.operator;
 
-import br.com.finalcraft.unesp.tc.maquinanorma.registrador.Recorder;
-import br.com.finalcraft.unesp.tc.maquinanorma.smartlogger.SmartLogger;
+import br.com.finalcraft.unesp.tc.maquinanorma.application.Recorder;
+import br.com.finalcraft.unesp.tc.maquinanorma.application.SmartLogger;
+import br.com.finalcraft.unesp.tc.maquinanorma.application.registrador.Recorder;
+import br.com.finalcraft.unesp.tc.maquinanorma.application.smartlogger.SmartLogger;
 
 public class NormaOperator {
 
@@ -214,52 +216,82 @@ public class NormaOperator {
         SmartLogger.verboseLogStates(recorderA,recorderB,recorderC);
     }
 
+    public static void powerOf(Recorder recorderA, Recorder recorderB){
+        Recorder recorderCA = new Recorder("CA",0,0);
+        atributeTo(recorderCA,recorderA,true);
 
-    public static void resetRecorder(Recorder recorder){
-        SmartLogger.logOut("Resetando registrador [" + recorder.name + "]!");
+
         while (true){
-            if (recorder.value == 0){
+            recorderB.value--;
+            if (recorderB.value == 0){
                 break;
-            }
-            if (recorder.signal == 0){
-                recorder.removeOne();
-            }else {
-                recorder.addOne();
-            }
-            SmartLogger.verboseLogStates(recorder);
         }
+            SmartLogger.verboseLogStates(recorderA,recorderB,recorderCA);
+
+            multiplyRecorder(recorderA,recorderCA);
+        }
+        SmartLogger.verboseLogStates(recorderA,recorderB,recorderCA);
     }
 
-    public static void modOf(Recorder recorder){
-        SmartLogger.logOut("Calculando MODULO do registrador [" + recorder.name + "]!");
+    public static void factorialOf(Recorder recorderA){
+        Recorder recorderCA = new Recorder("CA",0,0);
+        atributeTo(recorderCA,recorderA,true);
 
-        Recorder recorderT = new Recorder("T",0,0);
-
-        SmartLogger.verboseLogStates(recorder, recorderT);
 
         while (true){
-            if (recorder.value == 0){
+            recorderCA.value--;
+            if (recorderCA.value == 0){
                 break;
             }
-            if (recorder.signal == 0){
-                recorder.removeOne();
-                recorderT.addOne();
-            }else {
-                recorder.addOne();
-                recorderT.addOne();
-            }
-            SmartLogger.verboseLogStates(recorder, recorderT);
+            SmartLogger.verboseLogStates(recorderA,recorderCA);
+            multiplyRecorder(recorderA,recorderCA);
         }
-        while (true){
-            if (recorderT.value == 0){
-                break;
-            }
-            recorderT.removeOne();
-            recorder.addOne();
-            SmartLogger.verboseLogStates(recorder, recorderT);
-        }
-        SmartLogger.verboseLogStates(recorder);
+        SmartLogger.verboseLogStates(recorderA,recorderCA);
     }
+
+
+    public static int isPrime(Recorder recorderA){
+
+        Recorder recorderT1 = new Recorder("T1",0,0);
+        Recorder recorderT2 = new Recorder("T3",0,0);
+        Recorder minusOne = new Recorder("T4",0,0);
+        minusOne.removeOne();
+
+
+        addRecorder(recorderT1,recorderA,true);
+        recorderT1.removeOne();
+
+        while (true){
+
+            addRecorder(minusOne,recorderT1,true);
+            if (minusOne.value == 0){
+                break;
+            }else {
+                resetRecorder(minusOne);
+                minusOne.removeOne();
+            }
+            addRecorder(recorderT2,recorderA,true);
+            restOfDivisionOf(recorderT2,recorderT1);
+            if (recorderT2.value == 0){
+                return 1;
+            }
+            recorderT1.removeOne();
+            resetRecorder(recorderT2);
+            SmartLogger.verboseLogStates(recorderA,recorderT1,recorderT2);
+        }
+        return 0;
+    }
+
+
+    public static void restOfDivisionOf(Recorder recorderA, Recorder recorderB, Recorder resultRecord){
+        Recorder recorderTA = new Recorder("TA",0,0);
+        atributeTo(recorderTA,recorderA,true);
+        restOfDivisionOf(recorderA,recorderB);
+        atributeTo(resultRecord,recorderA,false);
+        atributeTo(recorderA,recorderTA,false);
+        SmartLogger.verboseLogStates(recorderA,recorderB,resultRecord);
+    }
+
 
     public static void restOfDivisionOf(Recorder recorderA, Recorder recorderB){
         SmartLogger.logOut("Resto da divisão  dos registradores [" + recorderA.name + "] e [" + recorderB.name +"]!");
@@ -301,6 +333,35 @@ public class NormaOperator {
         atributeTo(recorderA,recorderTA,false);
         SmartLogger.verboseLogStates(recorderA,recorderB,recorderTA,recorderTB,recorderTBNegative);
     }
+
+
+    public static void modOf(Recorder recorder){
+        SmartLogger.logOut("Calculando MODULO do registrador [" + recorder.name + "]!");
+        Recorder recorderT = new Recorder("T",0,0);
+        SmartLogger.verboseLogStates(recorder, recorderT);
+        if (recorder.signal == 1){
+            recorder.signal--;
+            return;
+        }
+        SmartLogger.verboseLogStates(recorder);
+    }
+
+
+    public static void resetRecorder(Recorder recorder){
+        SmartLogger.logOut("Resetando registrador [" + recorder.name + "]!");
+        while (true){
+            if (recorder.value == 0){
+                break;
+            }
+            if (recorder.signal == 0){
+                recorder.removeOne();
+            }else {
+                recorder.addOne();
+            }
+            SmartLogger.verboseLogStates(recorder);
+        }
+    }
+
 
     public static void atributeTo(Recorder recorderA, Recorder recorderB, boolean keepValueInB){
         SmartLogger.logOut("Atribuição do registrador [" + recorderB.name + "] em [" + recorderA.name +"]!");

@@ -1,15 +1,15 @@
-package br.com.finalcraft.unesp.tc.maquinanorma.registrador;
+package br.com.finalcraft.unesp.tc.maquinanorma.application.registrador;
 
 public class Recorder implements Comparable<Recorder>{
 
     public final String name;
-    public int value = 0;
     public int signal = 0;
+    public int value = 0;
 
-    public Recorder(String name, int value, int signal) {
+    public Recorder(String name, int signal, int value) {
         this.name = name;
-        this.value = value;
         this.signal = signal;
+        this.value = value;
     }
 
     public void addOne(){
