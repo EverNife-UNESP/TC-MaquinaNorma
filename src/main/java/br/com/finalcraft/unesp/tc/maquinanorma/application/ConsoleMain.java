@@ -3,9 +3,11 @@ package br.com.finalcraft.unesp.tc.maquinanorma.application;
 import br.com.finalcraft.unesp.tc.maquinanorma.application.registrador.Recorder;
 import br.com.finalcraft.unesp.tc.maquinanorma.application.smartlogger.SmartLogger;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Scanner;
 
-public class TrueMain {
+public class ConsoleMain {
 
 
     public static void consoleMenu(){
@@ -29,7 +31,7 @@ public class TrueMain {
         signal = input.nextInt();
         System.out.printf("Insira o VALOR do REG B:   ");
         value = input.nextInt();
-        recorderB = new Recorder("A",signal,value);
+        recorderB = new Recorder("B",signal,value);
 
         int method = -1;
 
@@ -75,7 +77,7 @@ public class TrueMain {
                     signal = input.nextInt();
                     System.out.printf("Insira o VALOR do REG B:   ");
                     value = input.nextInt();
-                    recorderB = new Recorder("A",signal,value);
+                    recorderB = new Recorder("B",signal,value);
                     break;
                 case 20:
                     return;
@@ -111,20 +113,16 @@ public class TrueMain {
 
     }
 
+    public static void main(String[] args) throws IOException, InterruptedException, URISyntaxException {
 
+        consoleMenu();
 
-    public static void main(String[] args) {
-
-
-        if (true){
-            consoleMenu();
-            return;
-        }
+        //Daqui para baixo foi usado como testes...
 
         //Esses recorders são o iniciais, eles são feito por atribuição de usuário!
-        Recorder recorderA = new Recorder("A",0,9);
-        Recorder recorderB = new Recorder("B",0,10);
-        Recorder recorderC = new Recorder("C",0,0);
+        //Recorder recorderA = new Recorder("A",0,9);
+        //Recorder recorderB = new Recorder("B",0,10);
+        //Recorder recorderC = new Recorder("C",0,0);
 
 
         //NormaOperator.addRecorder(recorderA,recorderB,false);                     //Adição entre dois registradores   Sem preservar conteúdo – obs: utilize números positivos/negativos
@@ -154,6 +152,5 @@ public class TrueMain {
         //NormaOperator.powerOf(recorderA,recorderB);                               //Calcula A elevado a B
 
         //NormaOperator.factorialOf(recorderA);                                     //Calcula o Fatorial de A
-
     }
 }

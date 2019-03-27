@@ -330,6 +330,7 @@ public class NormaOperator {
 
         atributeTo(recorderA,recorderTA,false);
         SmartLogger.verboseLogStates(recorderA,recorderB,recorderTA,recorderTB,recorderTBNegative);
+        SmartLogger.verboseLogStates(recorderA,recorderB);
     }
 
 

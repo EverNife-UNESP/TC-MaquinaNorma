@@ -1,11 +1,13 @@
 package br.com.finalcraft.unesp.tc.maquinanorma.application.smartlogger;
 
 import br.com.finalcraft.unesp.tc.maquinanorma.application.registrador.Recorder;
+import br.com.finalcraft.unesp.tc.maquinanorma.javafx.controller.JFXController;
 
 public class SmartLogger {
 
     public static void logOut(String message){
         System.out.println(message);
+        JFXController.aThis.logOut(message);
     }
 
     public static void verboseLogStates(Recorder... recorders){

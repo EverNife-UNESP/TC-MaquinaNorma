@@ -44,4 +44,9 @@ public class Recorder implements Comparable<Recorder>{
     public int compareTo(Recorder o) {
         return Integer.compare(this.value,o.value);
     }
+
+    @Override
+    public String toString() {
+        return "(" + signal + "," + value + ")";
+    }
 }

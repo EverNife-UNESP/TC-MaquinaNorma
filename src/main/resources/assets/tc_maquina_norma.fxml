@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.finalcraft.unesp.tc.maquinanorma.javafx.controller.JFXController">
+   <children>
+      <JFXBadge layoutY="7.0" />
+      <JFXTextField fx:id="regATextField" alignment="CENTER" layoutX="161.0" layoutY="40.0" prefHeight="40.0" prefWidth="51.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="23.0" layoutY="40.0" onAction="#onSetRegA" prefHeight="40.0" prefWidth="132.0" ripplerFill="#0ed10d" style="-fx-background-color: #009D75;" text="Atributir N em A">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="regBTextField" alignment="CENTER" layoutX="161.0" layoutY="102.0" prefHeight="40.0" prefWidth="51.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="23.0" layoutY="102.0" onAction="#onSetRegB" prefHeight="40.0" prefWidth="132.0" ripplerFill="#0ed10d" style="-fx-background-color: #009D75;" text="Atributir N em B">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextArea fx:id="smartLogConsole" editable="false" layoutX="28.0" layoutY="357.0" prefHeight="338.0" prefWidth="668.0" style="-fx-background-color: #D9F3EC;" text="Greetings my friend :D...">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextArea>
+      <Label layoutX="29.0" layoutY="340.0" prefHeight="17.0" prefWidth="145.0" text="SmartLogger Console 1.0" />
+      <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="213.0" onAction="#onAdd" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="Somar A + B">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="250.0" layoutY="13.0" prefHeight="17.0" prefWidth="223.0" text="Maquina Norma v1.0.1a   - Março 2019">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="253.0" onAction="#onAddKeeping" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="Somar A + B (com T)">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="294.0" onAction="#onMultiply" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="Multiplicar A por B">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="286.0" layoutY="213.0" onAction="#onFactorial" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="A Fotorial">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="286.0" layoutY="253.0" onAction="#onPower" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="A Elevado a B">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="545.0" layoutY="213.0" onAction="#onMajor" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="A &gt; B ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="546.0" layoutY="253.0" onAction="#onMajorOrEqual" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="A &gt;= B ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="286.0" layoutY="294.0" onAction="#onPrimal" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="A é Primo ?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="545.0" layoutY="294.0" onAction="#onRestOfDivision" prefHeight="25.0" prefWidth="152.0" ripplerFill="#0ed10d" style="-fx-background-color: #FFE082; -fx-background-radius: 20;" text="A % B">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXDialog layoutX="344.0" layoutY="111.0" prefWidth="0.0" />
+      <JFXButton fx:id="regAIdentifier" contentDisplay="CENTER" layoutX="227.0" layoutY="41.0" prefHeight="39.0" prefWidth="196.0" ripplerFill="#b23c3ce3" style="-fx-background-color: #673aB9; -fx-background-radius: 0;" text="REG A == (0,0)" textAlignment="CENTER" textFill="#00e1ff">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="regBIdentifier" contentDisplay="CENTER" layoutX="227.0" layoutY="103.0" prefHeight="39.0" prefWidth="196.0" ripplerFill="#b23c3ce3" style="-fx-background-color: #673aB9; -fx-background-radius: 0;" text="REG B == (0,0)" textAlignment="CENTER" textFill="#00e1ff">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="564.0" layoutY="61.0" onAction="#onResetAll" prefHeight="64.0" prefWidth="132.0" ripplerFill="BLACK" style="-fx-background-color: red; -fx-border-color: BLACK;" text="RESETAR" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="564.0" layoutY="41.0" prefHeight="17.0" prefWidth="132.0" text="Reseta os registradores">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="571.0" layoutY="339.0" onAction="#onConsoleReset" prefHeight="8.0" prefWidth="125.0" style="-fx-background-color: #8d6e63;" text="LIMPAR CONSOLE" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </JFXButton>
+      <Line endX="331.0" layoutX="363.0" layoutY="189.0" startX="-333.0" />
+   </children>
+</AnchorPane>
