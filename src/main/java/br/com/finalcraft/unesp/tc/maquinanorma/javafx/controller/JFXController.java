@@ -88,6 +88,7 @@ public class JFXController {
                 recorderA = new Recorder("A",1,Math.abs(value));
             }
             updateRegA();
+            regATextField.setText("");
         }
     }
 
@@ -101,6 +102,7 @@ public class JFXController {
                 recorderB = new Recorder("B",1,Math.abs(value));
             }
             updateRegB();
+            regBTextField.setText("");
         }
     }
 
@@ -108,6 +110,15 @@ public class JFXController {
     void onAdd(ActionEvent event) {
         NormaOperator.addRecorder(recorderA,recorderB,false);
         updateAllRegs();
+    }
+
+    @FXML
+    void onEnterEvent(ActionEvent event) {
+        if (event.getSource().equals(regATextField)){
+            onSetRegA(event);
+        }else if (event.getSource().equals(regBTextField)){
+            onSetRegB(event);
+        }
     }
 
     @FXML

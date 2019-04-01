@@ -216,8 +216,14 @@ public class NormaOperator {
 
     public static void powerOf(Recorder recorderA, Recorder recorderB){
         Recorder recorderCA = new Recorder("CA",0,0);
+        if(recorderB.value == 0){
+            recorderCA.value++;
+            atributeTo(recorderA,recorderCA,false);
+            SmartLogger.verboseLogStates(recorderA,recorderB,recorderCA);
+            SmartLogger.verboseLogStates(recorderA,recorderB);
+            return;
+        }
         atributeTo(recorderCA,recorderA,true);
-
 
         while (true){
             recorderB.value--;

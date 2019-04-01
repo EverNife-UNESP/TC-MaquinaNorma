@@ -10,10 +10,10 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.finalcraft.unesp.tc.maquinanorma.javafx.controller.JFXController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.finalcraft.unesp.tc.maquinanorma.javafx.controller.JFXController">
    <children>
       <JFXBadge layoutY="7.0" />
-      <JFXTextField fx:id="regATextField" alignment="CENTER" layoutX="161.0" layoutY="40.0" prefHeight="40.0" prefWidth="51.0">
+      <JFXTextField fx:id="regATextField" alignment="CENTER" layoutX="161.0" layoutY="40.0" onAction="#onEnterEvent" prefHeight="40.0" prefWidth="51.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -23,7 +23,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="regBTextField" alignment="CENTER" layoutX="161.0" layoutY="102.0" prefHeight="40.0" prefWidth="51.0">
+      <JFXTextField fx:id="regBTextField" alignment="CENTER" layoutX="161.0" layoutY="102.0" onAction="#onEnterEvent" prefHeight="40.0" prefWidth="51.0">
          <font>
             <Font size="15.0" />
          </font>
